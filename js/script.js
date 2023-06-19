@@ -17,6 +17,7 @@ const app = createApp({
 
   data() {
     return {
+      autoPlay: null,
       currentIndex: 0,
       images: [
         {
@@ -73,10 +74,18 @@ const app = createApp({
     setCurrentIndex(index) {
       return (this.currentIndex = index);
     },
+    // Start Autoplay
+    startAutoplay() {
+      this.autoPlay = setInterval(this.goNext, 3000);
+    },
+    // Clear Autoplay
+    clearAutoplay() {
+      clearInterval(this.autoPlay);
+    },
   },
   // Autoplay
   mounted() {
-    setInterval(this.goNext, 2000);
+    this.autoPlay = setInterval(this.goNext, 3000);
   },
 });
 
