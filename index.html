@@ -18,7 +18,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Java Script -->
     <script defer src="js/script.js"></script>
-    <title>Document</title>
+    <title>Vue Slider</title>
 </head>
 
 <body>
@@ -41,22 +41,22 @@
                     <!-- Carousel -->
 
                     <div id="carousel" class="col">
-                        <i class="fa-solid fa-arrow-up fa-xl" id="pre"></i>
+                        <i class="fa-solid fa-arrow-up fa-xl" id="pre" @click="goPrev"></i>
 
                         <!-- Gallery -->
 
                         <div class="gallery">
                             <img v-for="(image,i) in images" :src="image.image" :alt="image.text" :title="image.title"
-                                class="active">
+                                v-show="i===currentIndex">
                         </div>
 
                         <!-- Thumbnails -->
 
                         <div class="thumbnails">
                             <img v-for="(image,i) in images" :src="image.image" :alt="image.text" :title="image.title"
-                                class="active">
+                                :class="{selected : isSelected(i)}">
                         </div>
-                        <i class="fa-solid fa-arrow-down fa-xl" id="next"></i>
+                        <i class=" fa-solid fa-arrow-down fa-xl" id="next" @click="goNext"></i>
                     </div>
 
                 </div>

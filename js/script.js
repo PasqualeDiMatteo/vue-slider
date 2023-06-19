@@ -13,6 +13,8 @@ const { createApp } = Vue;
 // Inizializzo l'app Vue
 
 const app = createApp({
+  // Data
+
   data() {
     return {
       currentIndex: 0,
@@ -44,6 +46,29 @@ const app = createApp({
         },
       ],
     };
+  },
+  // Methods
+  methods: {
+    // Next Image
+    goNext() {
+      if (this.currentIndex === this.images.length - 1) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
+    },
+    // Prev Image
+    goPrev() {
+      if (this.currentIndex === 0) {
+        this.currentIndex = this.images.length - 1;
+      } else {
+        this.currentIndex--;
+      }
+    },
+    // Image Selected
+    isSelected(index) {
+      return index === this.currentIndex;
+    },
   },
 });
 
