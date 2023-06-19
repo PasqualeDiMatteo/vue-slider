@@ -74,6 +74,10 @@ const app = createApp({
       return (this.currentIndex = index);
     },
   },
+  // Autoplay
+  mounted() {
+    setInterval(this.goNext, 2000);
+  },
 });
 
 // La monto nell'elemento HTML
