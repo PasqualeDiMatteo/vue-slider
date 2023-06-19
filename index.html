@@ -44,7 +44,7 @@
 
                     <div class="gallery">
                         <img v-for="(image,i) in images" :src="image.image" :alt="image.text" :title="image.title"
-                            v-show="i===currentIndex">
+                            v-show="i===currentIndex" @mouseover="clearAutoplay" @mouseleave="startAutoplay">
                     </div>
 
                     <!-- Thumbnails -->
