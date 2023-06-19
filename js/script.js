@@ -69,6 +69,10 @@ const app = createApp({
     isSelected(index) {
       return index === this.currentIndex;
     },
+    // Set Current Index on Click
+    setCurrentIndex(index) {
+      return (this.currentIndex = index);
+    },
   },
 });
 

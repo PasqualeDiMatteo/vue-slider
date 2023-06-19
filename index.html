@@ -54,7 +54,7 @@
 
                         <div class="thumbnails">
                             <img v-for="(image,i) in images" :src="image.image" :alt="image.text" :title="image.title"
-                                :class="{selected : isSelected(i)}">
+                                :class="{selected : isSelected(i)}" @click="setCurrentIndex(i)">
                         </div>
                         <i class=" fa-solid fa-arrow-down fa-xl" id="next" @click="goNext"></i>
                     </div>
