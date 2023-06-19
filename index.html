@@ -23,45 +23,40 @@
 
 <body>
     <div id="root">
+        <!-- Container -->
 
-        <body>
+        <div class="container text-center">
 
-            <!-- Container -->
+            <!-- Titolo -->
 
-            <div class="container text-center">
+            <h1 class="py-4">Carosello</h1>
 
-                <!-- Titolo -->
+            <!-- Row -->
 
-                <h1 class="py-4">Carosello</h1>
+            <div class="row">
 
-                <!-- Row -->
+                <!-- Carousel -->
 
-                <div class="row">
+                <div id="carousel" class="col">
+                    <i class="fa-solid fa-arrow-up fa-xl" id="pre" @click="goPrev"></i>
 
-                    <!-- Carousel -->
+                    <!-- Gallery -->
 
-                    <div id="carousel" class="col">
-                        <i class="fa-solid fa-arrow-up fa-xl" id="pre" @click="goPrev"></i>
-
-                        <!-- Gallery -->
-
-                        <div class="gallery">
-                            <img v-for="(image,i) in images" :src="image.image" :alt="image.text" :title="image.title"
-                                v-show="i===currentIndex">
-                        </div>
-
-                        <!-- Thumbnails -->
-
-                        <div class="thumbnails">
-                            <img v-for="(image,i) in images" :src="image.image" :alt="image.text" :title="image.title"
-                                :class="{selected : isSelected(i)}" @click="setCurrentIndex(i)"
-                                @mouseover="clearAutoplay" @mouseleave="startAutoplay">
-                        </div>
-                        <i class=" fa-solid fa-arrow-down fa-xl" id="next" @click="goNext"></i>
+                    <div class="gallery">
+                        <img v-for="(image,i) in images" :src="image.image" :alt="image.text" :title="image.title"
+                            v-show="i===currentIndex">
                     </div>
 
+                    <!-- Thumbnails -->
+
+                    <div class="thumbnails">
+                        <img v-for="(image,i) in images" :src="image.image" :alt="image.text" :title="image.title"
+                            :class="{selected : isSelected(i)}" @click="setCurrentIndex(i)" @mouseover="clearAutoplay"
+                            @mouseleave="startAutoplay">
+                    </div>
+                    <i class=" fa-solid fa-arrow-down fa-xl" id="next" @click="goNext"></i>
                 </div>
             </div>
-        </body>
+        </div>
     </div>
 </body>
